@@ -9,7 +9,8 @@ module.exports = {
     'root-application': 'src/root-application/root-application.js',
     'common-dependencies': [
       // We want just one version of vue, so we put it into the common dependencies
-      'vue',
+        'react',
+        'react-dom',
     ],
   },
   output: {
@@ -27,10 +28,6 @@ module.exports = {
           test: /\.css$/,
           use: ['style-loader', 'css-loader']
       },
-      {
-          test: /\.vue$/,
-          loader: 'vue-loader'
-      }
     ],
   },
   node: {

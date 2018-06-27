@@ -33,9 +33,10 @@
   "dependencies": {
     "es6-promise": "^4.1.1",
     "express": "^4.16.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "rxjs": "^5.4.2",
     "single-spa": "^3.8.1",
-    "single-spa-vue": "^1.0.1",
-    "vue": "^2.5.13"
+    "single-spa-react": "^2.2.0"
   }
 }
