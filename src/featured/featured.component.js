@@ -19,7 +19,7 @@ class Featured extends Component {
     componentDidMount() {
         var th = this;
         this.serverRequest =
-            axios.get(this.props.source)
+            axios.get('/static/concerts.json')
                 .then(function(result) {
                     th.setState({
                         concerts: result.data.concerts
