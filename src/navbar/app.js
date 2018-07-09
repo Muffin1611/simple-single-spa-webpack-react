@@ -7,7 +7,7 @@ const reactLifecycles = singleSpaReact({
     React,
     ReactDOM,
     rootComponent: Navbar,
-    domElementGetter,
+    domElementGetter: () => document.getElementById('react-navbar')
 });
 
 export function bootstrap(props) {
@@ -22,14 +22,4 @@ export function unmount(props) {
     return reactLifecycles.unmount(props);
 }
 
-function domElementGetter() {
-    // Make sure there is a div for us to render into
-    let el = document.getElementById('react-navbar');
-    if (!el) {
-        el = document.createElement('div');
-        el.id = 'react-navbar';
-        document.body.appendChild(el);
-    }
 
-    return el;
-}

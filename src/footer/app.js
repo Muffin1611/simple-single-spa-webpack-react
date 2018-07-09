@@ -7,7 +7,7 @@ const reactLifecycles = singleSpaReact({
     React,
     ReactDOM,
     rootComponent: Footer,
-    domElementGetter,
+    domElementGetter: () => document.getElementById('react-footer')
 });
 
 export function bootstrap(props) {
@@ -22,14 +22,3 @@ export function unmount(props) {
     return reactLifecycles.unmount(props);
 }
 
-function domElementGetter() {
-    // Make sure there is a div for us to render into
-    let el = document.getElementById('react-footer');
-    if (!el) {
-        el = document.createElement('div');
-        el.id = 'react-footer';
-        document.body.appendChild(el);
-    }
-
-    return el;
-}

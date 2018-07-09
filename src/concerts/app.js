@@ -7,7 +7,7 @@ const reactLifecycles = singleSpaReact({
     React,
     ReactDOM,
     rootComponent: Concerts,
-    domElementGetter,
+    domElementGetter: () => document.getElementById('react-concerts')
 });
 
 export function bootstrap(props) {
@@ -20,16 +20,4 @@ export function mount(props) {
 
 export function unmount(props) {
     return reactLifecycles.unmount(props);
-}
-
-function domElementGetter() {
-    // Make sure there is a div for us to render into
-    let el = document.getElementById('react-concerts');
-    if (!el) {
-        el = document.createElement('div');
-        el.id = 'react-concerts';
-        document.body.appendChild(el);
-    }
-
-    return el;
 }

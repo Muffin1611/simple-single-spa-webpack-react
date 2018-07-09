@@ -7,7 +7,7 @@ const reactLifecycles = singleSpaReact({
     React,
     ReactDOM,
     rootComponent: Featured,
-    domElementGetter,
+    domElementGetter: () => document.getElementById('react-featured')
 });
 
 export function bootstrap(props) {
@@ -20,16 +20,4 @@ export function mount(props) {
 
 export function unmount(props) {
     return reactLifecycles.unmount(props);
-}
-
-function domElementGetter() {
-    // Make sure there is a div for us to render into
-    let el = document.getElementById('react-featured');
-    if (!el) {
-        el = document.createElement('div');
-        el.id = 'react-featured';
-        document.body.appendChild(el);
-    }
-
-    return el;
 }
